@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Website Intake &middot; Rana Tahir Bilal</title>
+<meta name="description" content="Intake questionnaire for a new website. Your answers stay in your browser until you send them.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%231B5E52'/%3E%3Cpath d='M9 16.5l4.5 4.5L23 11.5' stroke='%23FAF8F4' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --paper:#FAF8F4; --panel:#FFFFFF; --ink:#16191D; --ink-2:#3C444C; --mid:#5A6169;
+  --accent:#1B5E52; --accent-soft:#E7EFEC; --warn:#8A5A1E; --warn-soft:#F7EFE1;
+  --rule:#E2DCD0; --rule-2:#EDE8DE;
+  --disp:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --body:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --rail:296px;
+}
+*{box-sizing:border-box}
+html{ -webkit-text-size-adjust:100% }
+body{ margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--body); font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+
+/* ---------- shell ---------- */
+.shell{ display:grid; grid-template-columns:var(--rail) minmax(0,1fr); gap:0; min-height:100vh; }
+
+/* ---------- rail ---------- */
+.rail{ border-right:1px solid var(--rule); background:var(--paper);
+  position:sticky; top:0; height:100vh; overflow-y:auto; padding:34px 26px 40px; }
+.brand{ font-family:var(--disp); font-size:23px; letter-spacing:-.01em; margin:0 0 3px; }
+.brand-sub{ font-size:12px; letter-spacing:.13em; text-transform:uppercase; color:var(--mid);
+  font-weight:600; margin:0 0 26px; }
+.meter{ display:flex; align-items:center; gap:12px; margin:0 0 8px; }
+.ring{ flex:0 0 46px }
+.ring circle{ fill:none; stroke-width:4 }
+.ring .bg{ stroke:var(--rule) }
+.ring .fg{ stroke:var(--accent); stroke-linecap:round;
+  transition:stroke-dasharray .5s cubic-bezier(.22,.7,.24,1) }
+.meter-t{ font-size:13.5px; color:var(--mid); line-height:1.35 }
+.meter-t b{ display:block; font-size:19px; color:var(--ink); font-weight:600 }
+.saved{ font-size:12px; color:var(--accent); height:16px; margin:0 0 20px;
+  opacity:0; transition:opacity .3s ease }
+.saved.on{ opacity:1 }
+nav ol{ list-style:none; margin:0; padding:0; border-top:1px solid var(--rule-2) }
+nav a{ display:flex; align-items:center; gap:10px; padding:9px 0; text-decoration:none;
+  color:var(--ink-2); font-size:13.5px; border-bottom:1px solid var(--rule-2); line-height:1.3 }
+nav a:hover{ color:var(--accent) }
+nav a.active{ color:var(--accent); font-weight:600 }
+.dot{ flex:0 0 7px; height:7px; border-radius:50%; background:var(--rule);
+  transition:background .3s ease }
+.dot.part{ background:var(--warn) }
+.dot.done{ background:var(--accent) }
+.nav-n{ flex:0 0 22px; font-size:11px; color:var(--mid); font-variant-numeric:tabular-nums }
+.tools{ margin-top:26px; display:flex; flex-direction:column; gap:8px }
+button{ font-family:var(--body); font-size:14px; font-weight:600; cursor:pointer;
+  padding:11px 14px; border-radius:4px; border:1px solid var(--rule); background:var(--panel);
+  color:var(--ink); text-align:left; transition:border-color .2s ease, background .2s ease }
+button:hover{ border-color:var(--accent); color:var(--accent) }
+button.primary{ background:var(--accent); border-color:var(--accent); color:#fff }
+button.primary:hover{ background:#164C42; color:#fff }
+button.ghost{ border-color:transparent; color:var(--mid); padding-left:0 }
+button.ghost:hover{ color:var(--warn) }
+
+/* ---------- main ---------- */
+main{ padding:0 0 120px; min-width:0 }
+.inner{ max-width:720px; margin:0 auto; padding:0 32px }
+header.top{ padding:62px 0 34px }
+h1{ font-family:var(--disp); font-weight:400; font-size:clamp(34px,4.6vw,54px);
+  line-height:1.05; letter-spacing:-.02em; margin:0 0 16px; text-wrap:balance }
+.lede{ font-size:17.5px; color:var(--ink-2); margin:0 0 14px; max-width:60ch }
+.lede em{ font-family:var(--disp); font-style:italic; font-size:19px }
+.priv{ display:flex; gap:11px; align-items:flex-start; margin:26px 0 0; padding:15px 17px;
+  background:var(--accent-soft); border-radius:5px; font-size:14.5px; color:#123F37; line-height:1.55 }
+.priv svg{ flex:0 0 17px; margin-top:2px }
+
+section{ padding:44px 0 8px; border-top:1px solid var(--rule); margin-top:34px; scroll-margin-top:20px }
+.sec-n{ font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent);
+  font-weight:600; margin:0 0 9px; font-variant-numeric:tabular-nums }
+h2{ font-family:var(--disp); font-weight:400; font-size:clamp(25px,2.9vw,35px); line-height:1.14;
+  letter-spacing:-.015em; margin:0 0 10px; text-wrap:balance }
+.sec-note{ font-size:15px; color:var(--mid); margin:0 0 6px; max-width:62ch; line-height:1.6 }
+section.careful .sec-n{ color:var(--warn) }
+section.careful .sec-note{ background:var(--warn-soft); padding:14px 16px; border-radius:5px;
+  color:#5E3D12; margin-bottom:10px }
+
+.q{ padding:22px 0 4px; border-bottom:1px solid var(--rule-2) }
+.q:last-of-type{ border-bottom:0 }
+label{ display:block; font-size:16.5px; font-weight:500; color:var(--ink); margin:0 0 10px;
+  line-height:1.45; cursor:pointer }
+textarea{ width:100%; font-family:var(--body); font-size:16px; line-height:1.62; color:var(--ink);
+  background:var(--panel); border:1px solid var(--rule); border-radius:5px; padding:12px 14px;
+  resize:none; overflow:hidden; min-height:52px; transition:border-color .2s ease, box-shadow .2s ease }
+textarea::placeholder{ color:#9AA1A8 }
+textarea:focus{ outline:none; border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft) }
+textarea.filled{ border-left:3px solid var(--accent) }
+
+.end{ margin-top:46px; padding:30px 32px; background:var(--panel); border:1px solid var(--rule);
+  border-radius:6px }
+.end h3{ font-family:var(--disp); font-weight:400; font-size:27px; margin:0 0 8px; letter-spacing:-.01em }
+.end p{ color:var(--ink-2); margin:0 0 18px; font-size:15.5px }
+.end-row{ display:flex; gap:10px; flex-wrap:wrap }
+.end-row button{ text-align:center }
+
+/* ---------- mobile ---------- */
+.mobar{ display:none }
+@media (max-width:900px){
+  .shell{ grid-template-columns:1fr }
+  .rail{ display:none }
+  .mobar{ display:block; position:sticky; top:0; z-index:20; background:var(--paper);
+    border-bottom:1px solid var(--rule); padding:11px 20px }
+  .mobar-in{ display:flex; align-items:center; gap:12px; max-width:720px; margin:0 auto }
+  .mobar b{ font-family:var(--disp); font-weight:400; font-size:17px; white-space:nowrap }
+  .track{ flex:1; height:5px; background:var(--rule); border-radius:3px; overflow:hidden }
+  .track i{ display:block; height:100%; background:var(--accent); width:0;
+    transition:width .4s cubic-bezier(.22,.7,.24,1) }
+  .mopct{ font-size:13px; color:var(--mid); font-variant-numeric:tabular-nums; white-space:nowrap }
+  .inner{ padding:0 20px }
+  header.top{ padding:36px 0 24px }
+  .end{ padding:24px 20px }
+  .end-row button{ flex:1 1 100% }
+}
+
+@media print{
+  .rail,.mobar,.tools,.end,.priv{ display:none }
+  .shell{ display:block } body{ background:#fff }
+  textarea{ border:0; border-bottom:1px solid #ccc; border-radius:0; padding:4px 0 }
+  section{ break-inside:avoid }
+}
+@media (prefers-reduced-motion:reduce){ *{ transition:none!important } }
+</style>
+</head>
+<body>
+
+<div class="mobar">
+  <div class="mobar-in">
+    <b>Intake</b>
+    <span class="track"><i id="motrack"></i></span>
+    <span class="mopct"><span id="mopct">0</span>%</span>
+  </div>
+</div>
+
+<div class="shell">
+  <aside class="rail">
+    <p class="brand">Website Intake</p>
+    <p class="brand-sub">Rana Tahir Bilal</p>
+
+    <div class="meter">
+      <svg class="ring" viewBox="0 0 46 46" width="46" height="46" aria-hidden="true">
+        <circle class="bg" cx="23" cy="23" r="19"></circle>
+        <circle class="fg" id="ring" cx="23" cy="23" r="19"
+          transform="rotate(-90 23 23)" stroke-dasharray="0 120"></circle>
+      </svg>
+      <span class="meter-t"><b id="pct">0%</b><span id="cnt">0 of 0 answered</span></span>
+    </div>
+    <p class="saved" id="saved">Saved to this browser</p>
+
+    <nav><ol id="nav"></ol></nav>
+
+    <div class="tools">
+      <button class="primary" id="copy2">Copy all answers</button>
+      <button id="dl2">Download as a file</button>
+      <button class="ghost" id="clear">Clear everything</button>
+    </div>
+  </aside>
+
+  <main>
+    <div class="inner">
+      <header class="top">
+        <h1>Before I build anything, I need to hear it from you.</h1>
+        <p class="lede">This is the whole brief. What goes on your site comes from what you write
+           here, and nothing else. <em>I don&rsquo;t invent credentials, student numbers, results
+           or testimonials.</em></p>
+        <p class="lede">Answer what you can. Skip what you can&rsquo;t. A short honest answer is
+           worth more than a long careful one, and the two sections that matter most are
+           <strong>The story</strong> and <strong>The courses</strong>.</p>
+        <div class="priv">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor"
+               stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"></path>
+            <path d="M9 12.5l2 2 4-4.5"></path>
+          </svg>
+          <span><strong>Nothing here is sent anywhere.</strong> Your answers save in this browser
+            only. When you&rsquo;re done, use <em>Copy all answers</em> or <em>Download as a file</em>
+            and send it to me however you prefer.</span>
+        </div>
+      </header>
+      <div id="form"></div>
+
+      <div class="end">
+        <h3>Finished, or finished enough?</h3>
+        <p>Take everything you&rsquo;ve written and send it over. You can come back and add to it
+           later &mdash; this page remembers your answers on this device.</p>
+        <div class="end-row">
+          <button class="primary" id="copy">Copy all answers</button>
+          <button id="dl">Download as a file</button>
+          <button id="prt">Print</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+var SECTIONS = [{"title": "THE BASICS", "note": "", "qs": ["Your full name, as it should appear on the site", "What do people actually call you?", "Your channel name and handle", "Do you want your real name on the site, or only the handle?", "City and country, or as much as you want public", "Contact email for the site", "Business or booking email, if different"]}, {"title": "THE CHANNEL", "note": "", "qs": ["Channel URL", "When did you start it?", "Subscribers today, and roughly how fast it is growing", "How often do you publish?", "Your three or four best videos, with links. Not the most viewed. The ones you would show someone who had never heard of you.", "Which video surprised you by how well it did, and why do you think it did?", "Every other platform you are on, with links and rough following", "Discord, community or newsletter, with size"]}, {"title": "THE STORY", "note": "This is the centre of the site. Take your time here.", "qs": ["Why did you start doing this?", "Did something happen, to you or to someone you know? Tell it properly, with what actually happened and how it felt.", "If that story involves another real person, do you have their permission to tell it publicly? Is anyone in it under eighteen?", "What did you do before this?", "What was the moment you realised this was the work?", "What is the hardest message you have ever received from a viewer?", "What keeps you doing it on a bad week?"]}, {"title": "WHAT YOU ARE ACTUALLY FIGHTING", "note": "", "qs": ["Which specific scams do you teach people to spot?", "What kind of bullying or harassment do you deal with most?", "Who gets hurt by this? Be specific about who you are protecting.", "What does everyone get wrong about staying safe online?", "What is the single piece of advice you repeat most often?"]}, {"title": "THE COURSES", "note": "", "qs": ["Every course, with the exact title.", "For each one: who is it for, and who is it NOT for?", "Length, format, and what is actually inside.", "Price, and where it is sold.", "What can someone do at the end that they could not do at the start?", "Is there a free course, trial or first lesson?", "Refund policy, in your own words.", "How many people have taken it? Give a real number or leave this blank.", "Do you promise any outcome? Write the promise exactly as you make it."]}, {"title": "CLAIMS I HAVE TO BE CAREFUL WITH", "note": "India specific. The CCPA has issued guidelines on coaching sector advertising and on influencer endorsements, and both carry real penalties. These questions exist so neither of us puts something on the page that cannot be backed up.", "qs": ["If any of your marketing says or implies what a student will earn, get hired into, achieve, or be selected for, write those claims here in full.", "What evidence do you have for each one? Numbers, records, surveys.", "Do you publish a success rate, a selection rate, or student results anywhere?", "For any student result or rank you show: do you have that person's written consent to use their name, photograph and story?", "Roughly how many students are enrolled across your courses?", "Are your courses recognised, accredited or approved by any body? If not, say so plainly so the site does not imply otherwise.", "Do you take sponsorships or affiliate commission? List them.", "How do you currently disclose those on YouTube?", "Do you name specific scammers, companies or individuals as fraudulent?", "If so, what is that based on? A conviction, a regulator or police finding, a news report, or your own investigation?", "Have you ever had a legal notice, takedown or complaint over something you published?"]}, {"title": "CREDENTIALS", "note": "", "qs": ["Certifications, with the issuing body and the year, and whether each is current.", "Degrees and institutions, with years.", "Professional background in security, if any.", "If you are self taught, say so plainly. It is not a weakness and I would rather write it honestly than imply something that is not true."]}, {"title": "RECOGNITION", "note": "", "qs": ["Press, interviews, podcasts, panels, with links.", "Awards, listings, features.", "Talks, schools, universities or organisations you have spoken to.", "Anyone notable who has endorsed or collaborated with you."]}, {"title": "WHAT OTHER PEOPLE SAY", "note": "", "qs": ["Student testimonials, in full and word for word.", "Do you have written permission to publish each one, with their name?", "Any of these from someone under eighteen? Under Indian data protection law a child is anyone under eighteen, so I need a parent's verifiable consent or we use it anonymously."]}, {"title": "YOUR AUDIENCE", "note": "", "qs": ["Who actually watches you? Age, country, what brought them.", "Do you have viewers under eighteen, and roughly what share?", "What do they come to you for that they cannot get elsewhere?", "What do they ask you for that you do not yet offer?"]}, {"title": "THE BUSINESS SIDE", "note": "", "qs": ["How do you make money today, and in what proportion?", "Sponsorships, affiliates or brand deals? Name them.", "Do you want the site to take sponsor enquiries?", "Are you selling anything else? Books, merch, one to one help.", "Do you want to collect email addresses or phone numbers on the site? If yes, what do people get for signing up, and which service do you use?", "Do you have a GST registration, and should it appear on the site?"]}, {"title": "WHAT THE SITE IS FOR", "note": "", "qs": ["If someone lands on the site, what is the one thing you want them to do?", "What should they do second?", "What is YouTube bad at that this site needs to fix?", "Is there a site, of anyone in any field, whose feel you like? Link it."]}, {"title": "IN YOUR OWN WORDS", "note": "", "qs": ["Two or three sentences you'd be happy to see quoted verbatim, large, at the top of the page."]}, {"title": "PHOTOGRAPHS AND VIDEO", "note": "", "qs": ["What photographs do you have?", "Paste the link to your photographs here.", "Who took them, and may I publish them?", "May I create additional pictures of you for the site?", "Do you have channel artwork, a logo or brand colours I should keep?", "Any video or clip that should be embedded?"]}, {"title": "LINES I SHOULDN'T CROSS", "note": "", "qs": ["What do you not want on this site?", "Anything about your personal life, family or location that stays off?", "Have you been doxxed, harassed or targeted? Anything I should avoid making easier to find?", "Does anyone need to approve this before it goes live?"]}, {"title": "PRACTICAL", "note": "", "qs": ["When do you need it?", "Do you own a domain?", "Where is your course sold, and does the site need to link or integrate?", "Anything I didn't ask?"]}];
+
+(function(){
+  "use strict";
+  var KEY = 'rtb-intake-v1';
+  var store = {};
+  function load(){ try{ store = JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ store={}; } }
+  function save(){ try{ localStorage.setItem(KEY, JSON.stringify(store)); flash(); }catch(e){} }
+  var st, sto;
+  function flash(){
+    st = st || document.getElementById('saved');
+    st.classList.add('on'); clearTimeout(sto);
+    sto = setTimeout(function(){ st.classList.remove('on'); }, 1400);
+  }
+  function title(s){
+    var t = s.charAt(0) + s.slice(1).toLowerCase();
+    return t.replace(/\bi\b/g, 'I').replace(/\bi'/g, "I'");
+  }
+
+  load();
+
+  var form = document.getElementById('form');
+  var nav  = document.getElementById('nav');
+  var total = 0;
+
+  SECTIONS.forEach(function(sec, si){
+    var id = 'sec-' + si;
+    var el = document.createElement('section');
+    el.id = id;
+    if (/CAREFUL/.test(sec.title)) el.className = 'careful';
+    var h = '<p class="sec-n">' + String(si+1).padStart(2,'0') + ' &mdash; ' + sec.title + '</p>';
+    h += '<h2>' + title(sec.title) + '</h2>';
+    if (sec.note) h += '<p class="sec-note">' + sec.note + '</p>';
+    sec.qs.forEach(function(q, qi){
+      var key = si + '.' + qi; total++;
+      var v = store[key] || '';
+      h += '<div class="q"><label for="f' + key.replace('.','_') + '">' + q + '</label>' +
+           '<textarea id="f' + key.replace('.','_') + '" data-k="' + key +
+           '" placeholder="Your answer">' + v.replace(/</g,'&lt;') + '</textarea></div>';
+    });
+    el.innerHTML = h;
+    form.appendChild(el);
+
+    var li = document.createElement('li');
+    li.innerHTML = '<a href="#' + id + '" data-s="' + si + '">' +
+      '<span class="dot" id="d' + si + '"></span>' +
+      '<span class="nav-n">' + String(si+1).padStart(2,'0') + '</span>' +
+      '<span>' + title(sec.title) + '</span></a>';
+    nav.appendChild(li);
+  });
+
+  var areas = Array.prototype.slice.call(document.querySelectorAll('textarea'));
+  function grow(t){ t.style.height='auto'; t.style.height=(t.scrollHeight+2)+'px'; }
+  areas.forEach(function(t){
+    grow(t);
+    if (t.value.trim()) t.classList.add('filled');
+    t.addEventListener('input', function(){
+      grow(t);
+      store[t.dataset.k] = t.value;
+      t.classList.toggle('filled', !!t.value.trim());
+      clearTimeout(t._t); t._t = setTimeout(save, 400);
+      progress();
+    });
+  });
+
+  var ringEl = document.getElementById('ring');
+  var C = 2 * Math.PI * 19;
+  function progress(){
+    var done = 0;
+    SECTIONS.forEach(function(sec, si){
+      var n = 0;
+      sec.qs.forEach(function(_, qi){ if ((store[si+'.'+qi]||'').trim()) n++; });
+      done += n;
+      var d = document.getElementById('d'+si);
+      if (d){ d.className = 'dot' + (n === sec.qs.length ? ' done' : n ? ' part' : ''); }
+    });
+    var p = total ? Math.round(done/total*100) : 0;
+    document.getElementById('pct').textContent = p + '%';
+    document.getElementById('cnt').textContent = done + ' of ' + total + ' answered';
+    ringEl.setAttribute('stroke-dasharray', (C*p/100).toFixed(1) + ' ' + C.toFixed(1));
+    document.getElementById('motrack').style.width = p + '%';
+    document.getElementById('mopct').textContent = p;
+  }
+  progress();
+
+  /* active section in the rail */
+  if ('IntersectionObserver' in window){
+    var links = {};
+    Array.prototype.forEach.call(nav.querySelectorAll('a'), function(a){ links[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        var a = links[e.target.id]; if (!a) return;
+        if (e.isIntersecting){
+          Array.prototype.forEach.call(nav.querySelectorAll('a'), function(x){ x.classList.remove('active'); });
+          a.classList.add('active');
+        }
+      });
+    }, { rootMargin:'-10% 0px -75% 0px' });
+    SECTIONS.forEach(function(_, si){ io.observe(document.getElementById('sec-'+si)); });
+  }
+
+  /* output */
+  function text(){
+    var out = ['WEBSITE INTAKE', ''];
+    var name = (store['0.0']||'').trim();
+    if (name) out.push('From: ' + name);
+    out.push('Completed: ' + new Date().toLocaleDateString('en-GB',
+      {day:'numeric',month:'long',year:'numeric'}));
+    out.push('');
+    SECTIONS.forEach(function(sec, si){
+      out.push('', '== ' + sec.title + ' ==', '');
+      sec.qs.forEach(function(q, qi){
+        var v = (store[si+'.'+qi]||'').trim();
+        out.push(q, v || '(not answered)', '');
+      });
+    });
+    return out.join('\n');
+  }
+  function copy(btn){
+    var t = text(), old = btn.textContent;
+    function ok(){ btn.textContent = 'Copied'; setTimeout(function(){ btn.textContent = old; }, 1600); }
+    if (navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(t).then(ok, fallback);
+    } else fallback();
+    function fallback(){
+      var a = document.createElement('textarea');
+      a.value = t; a.style.position='fixed'; a.style.opacity='0';
+      document.body.appendChild(a); a.select();
+      try{ document.execCommand('copy'); ok(); }catch(e){ btn.textContent = 'Press Ctrl+C'; }
+      document.body.removeChild(a);
+    }
+  }
+  function download(){
+    var name = ((store['0.0']||'intake').trim().toLowerCase().replace(/[^a-z0-9]+/g,'-') || 'intake');
+    var blob = new Blob([text()], {type:'text/plain;charset=utf-8'});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = name + '-website-intake.txt';
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){ URL.revokeObjectURL(url); document.body.removeChild(a); }, 200);
+  }
+  document.getElementById('copy').addEventListener('click', function(){ copy(this); });
+  document.getElementById('copy2').addEventListener('click', function(){ copy(this); });
+  document.getElementById('dl').addEventListener('click', download);
+  document.getElementById('dl2').addEventListener('click', download);
+  document.getElementById('prt').addEventListener('click', function(){ window.print(); });
+  document.getElementById('clear').addEventListener('click', function(){
+    if (!confirm('Clear every answer on this device? This cannot be undone.')) return;
+    store = {}; try{ localStorage.removeItem(KEY); }catch(e){}
+    areas.forEach(function(t){ t.value=''; t.classList.remove('filled'); grow(t); });
+    progress();
+  });
+})();
+</script>
+</body>
+</html>
