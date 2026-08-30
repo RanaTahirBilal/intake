@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cyber Guard &middot; Website Questions</title>
+<meta name="description" content="What I need from you before building cyberguardhacker.com. Your answers stay in your browser.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230E1116'/%3E%3Cpath d='M16 5l9 4v7c0 6-3.8 9.6-9 11-5.2-1.4-9-5-9-11V9z' fill='none' stroke='%233DDC84' stroke-width='2.2'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0E1116; --panel:#161B22; --panel-2:#1C2430; --ink:#E8EDF2; --ink-2:#A7B4C2;
+  --mid:#7D8B9A; --acc:#3DDC84; --acc-deep:#0E3F26; --warn:#FFB454; --warn-deep:#3A2A0E;
+  --rule:#242E3A;
+  --disp:"Anton",Impact,sans-serif; --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace; --rail:290px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.shell{display:grid;grid-template-columns:var(--rail) minmax(0,1fr);min-height:100vh}
+
+.rail{border-right:1px solid var(--rule);position:sticky;top:0;height:100vh;overflow-y:auto;
+  padding:30px 22px 40px;background:var(--bg)}
+.brand{font-family:var(--disp);font-size:25px;line-height:1;text-transform:uppercase;margin:0 0 4px}
+.brand span{color:var(--acc)}
+.brand-sub{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--mid);margin:0 0 24px}
+.meter{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.ring{flex:0 0 44px}
+.ring circle{fill:none;stroke-width:4}
+.ring .bg{stroke:var(--rule)} .ring .fg{stroke:var(--acc);stroke-linecap:round;
+  transition:stroke-dasharray .5s cubic-bezier(.22,.7,.24,1)}
+.mt b{display:block;font-family:var(--disp);font-size:21px;line-height:1}
+.mt span{font-size:12.5px;color:var(--mid)}
+.saved{font-family:var(--mono);font-size:11px;color:var(--acc);height:15px;margin:0 0 18px;
+  opacity:0;transition:opacity .3s}
+.saved.on{opacity:1}
+nav ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+nav a{display:flex;gap:9px;align-items:center;padding:9px 0;text-decoration:none;color:var(--ink-2);
+  font-size:13px;border-bottom:1px solid var(--rule);line-height:1.3}
+nav a:hover,nav a.active{color:var(--acc)} nav a.active{font-weight:600}
+.dot{flex:0 0 7px;height:7px;border-radius:50%;background:var(--rule);transition:background .3s}
+.dot.part{background:var(--warn)} .dot.done{background:var(--acc)}
+.nn{flex:0 0 20px;font-family:var(--mono);font-size:10.5px;color:var(--mid)}
+.tools{margin-top:24px;display:flex;flex-direction:column;gap:8px}
+button{font-family:var(--body);font-size:14px;font-weight:600;cursor:pointer;padding:11px 14px;
+  border-radius:5px;border:1px solid var(--rule);background:var(--panel);color:var(--ink);
+  text-align:left;transition:.2s}
+button:hover{border-color:var(--acc);color:var(--acc)}
+button.primary{background:var(--acc);border-color:var(--acc);color:#06240F}
+button.primary:hover{background:#35c476;color:#06240F}
+button.ghost{border-color:transparent;color:var(--mid);padding-left:0}
+button.ghost:hover{color:var(--warn)}
+
+main{padding:0 0 110px;min-width:0}
+.inner{max-width:730px;margin:0 auto;padding:0 30px}
+header.top{padding:58px 0 30px}
+h1{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:clamp(34px,5.6vw,62px);
+  line-height:1;letter-spacing:.005em;margin:0 0 18px;text-wrap:balance}
+h1 span{color:var(--acc)}
+.lede{font-size:17.5px;color:var(--ink-2);max-width:60ch;margin:0 0 14px}
+.priv{display:flex;gap:11px;align-items:flex-start;margin:24px 0 0;padding:15px 17px;
+  background:var(--acc-deep);border-radius:6px;font-size:14.5px;color:#C7F3DB;line-height:1.55}
+.priv svg{flex:0 0 17px;margin-top:2px}
+
+section{padding:42px 0 8px;border-top:1px solid var(--rule);margin-top:32px;scroll-margin-top:16px}
+.sn{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--acc);margin:0 0 9px}
+h2{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:clamp(24px,3.2vw,36px);
+  line-height:1.06;margin:0 0 10px;text-wrap:balance}
+.note{font-size:15px;color:var(--ink-2);max-width:62ch;margin:0 0 4px;line-height:1.6}
+section.key .sn{color:#7FD8FF}
+section.key h2{color:#EAF6FF}
+section.careful .sn{color:var(--warn)}
+section.careful .note{background:var(--warn-deep);padding:14px 16px;border-radius:6px;color:#FFD79B}
+
+.known{background:var(--panel);border:1px solid var(--rule);border-radius:7px;overflow:hidden;
+  margin:22px 0 6px}
+.known h3{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--acc);margin:0;padding:14px 18px 11px;border-bottom:1px solid var(--rule);
+  background:var(--panel-2)}
+.kgrp{padding:4px 18px 12px;border-bottom:1px solid var(--rule)}
+.kgrp:last-child{border-bottom:0}
+.kgrp b{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--mid);margin:13px 0 7px}
+.krow{display:grid;grid-template-columns:190px 1fr;gap:12px;padding:4px 0;font-size:14.5px}
+.krow i{font-style:normal;color:var(--mid)}
+.krow span{color:var(--ink)}
+
+.q{padding:21px 0 4px;border-bottom:1px solid var(--rule)}
+.q:last-of-type{border-bottom:0}
+label{display:block;font-size:16.5px;font-weight:500;margin:0 0 10px;line-height:1.45;cursor:pointer}
+textarea{width:100%;font-family:var(--body);font-size:16px;line-height:1.6;color:var(--ink);
+  background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;
+  resize:none;overflow:hidden;min-height:52px;transition:.2s}
+textarea::placeholder{color:#5C6875}
+textarea:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px rgba(61,220,132,.15)}
+textarea.filled{border-left:3px solid var(--acc)}
+
+.end{margin-top:44px;padding:28px 30px;background:var(--panel);border:1px solid var(--rule);border-radius:8px}
+.end h3{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:26px;margin:0 0 8px}
+.end p{color:var(--ink-2);margin:0 0 18px;font-size:15.5px}
+.row{display:flex;gap:10px;flex-wrap:wrap} .row button{text-align:center}
+
+.mobar{display:none}
+@media(max-width:900px){
+  .shell{grid-template-columns:1fr} .rail{display:none}
+  .mobar{display:block;position:sticky;top:0;z-index:20;background:var(--bg);
+    border-bottom:1px solid var(--rule);padding:11px 20px}
+  .mo{display:flex;align-items:center;gap:12px;max-width:730px;margin:0 auto}
+  .mo b{font-family:var(--disp);font-size:17px;text-transform:uppercase;white-space:nowrap}
+  .track{flex:1;height:5px;background:var(--rule);border-radius:3px;overflow:hidden}
+  .track i{display:block;height:100%;background:var(--acc);width:0;transition:width .4s}
+  .mopct{font-family:var(--mono);font-size:12.5px;color:var(--mid)}
+  .inner{padding:0 20px} header.top{padding:34px 0 22px}
+  .krow{grid-template-columns:1fr;gap:1px;padding:7px 0}
+  .end{padding:22px 20px} .row button{flex:1 1 100%}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="mobar"><div class="mo"><b>Cyber Guard</b>
+  <span class="track"><i id="motrack"></i></span>
+  <span class="mopct"><span id="mopct">0</span>%</span></div></div>
+
+<div class="shell">
+  <aside class="rail">
+    <p class="brand">Website<br><span>Questions</span></p>
+    <p class="brand-sub">For Anil Yadav</p>
+    <div class="meter">
+      <svg class="ring" viewBox="0 0 44 44" width="44" height="44" aria-hidden="true">
+        <circle class="bg" cx="22" cy="22" r="18"></circle>
+        <circle class="fg" id="ring" cx="22" cy="22" r="18" transform="rotate(-90 22 22)"
+          stroke-dasharray="0 114"></circle></svg>
+      <span class="mt"><b id="pct">0%</b><span id="cnt">0 of 0</span></span>
+    </div>
+    <p class="saved" id="saved">Saved on this device</p>
+    <nav><ol id="nav"></ol></nav>
+    <div class="tools">
+      <button class="primary" id="copy2">Copy all answers</button>
+      <button id="dl2">Download as a file</button>
+      <button class="ghost" id="clear">Clear everything</button>
+    </div>
+  </aside>
+
+  <main><div class="inner">
+    <header class="top">
+      <h1>Aapke numbers mere paas hain.<br><span>Ab aapki kahani chahiye.</span></h1>
+      <p class="lede">Tahir this side. I have already been through your YouTube Studio and your Udemy
+      account, so I will not ask you a single thing a dashboard could tell me. Your reach, your
+      students, your ratings, your 85 countries &mdash; all of it is already written into the first
+      section. Just check it.</p>
+   <p class="lede">What is left is the part no dashboard has and no competitor can copy: your story,
+      your voice, and what you actually want to be known for. <strong>If you only do three, do sections 3, 4 and 8.</strong> Those three decide what the whole website says.</p>
+   <p class="lede">Write in Hindi wherever it is easier. Rough and honest is better than polished
+      and vague &mdash; I will do the polishing.</p>
+      <div class="priv">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor"
+          stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2l8 4v6c0 5-3.4 8.5-8 10-4.6-1.5-8-5-8-10V6z"></path>
+          <path d="M9 12.5l2 2 4-4.5"></path></svg>
+        <span><strong>Nothing here is sent anywhere.</strong> This page has no server. Your answers
+          save in your own browser, and nothing leaves it until you press
+          <em>Copy all answers</em> or <em>Download as a file</em> and send it to me yourself.</span>
+      </div>
+    </header>
+    <div id="form"></div>
+    <div class="end">
+      <h3>Done, or done enough?</h3>
+      <p>Send me whatever you have written. You can come back later &mdash; this page remembers
+         your answers on this device.</p>
+      <div class="row">
+        <button class="primary" id="copy">Copy all answers</button>
+        <button id="dl">Download as a file</button>
+        <button id="prt">Print</button>
+      </div>
+    </div>
+  </div></main>
+</div>
+
+<script>
+var CONTENT = {"known": {"YouTube, lifetime": [["Channel", "Cyber Guard · @nrcyberguard · started 16 March 2023"], ["Total views", "3,729,768"], ["Watch time", "150,700 hours"], ["Subscribers", "89,930"], ["Videos published", "253"]], "YouTube, last 28 days": [["Views", "256,500"], ["People reached", "141,400"], ["New subscribers", "+4,500"], ["Thumbnail impressions", "3,000,000 · 5.5% click-through"], ["Average view duration", "2 min 25 sec"]], "Who watches": [["Age", "13–17: 13.4% · 18–24: 37.8% · 25–34: 31.4% · 35–44: 11.6% · 45+: 6.0%"], ["Gender", "90.4% male · 9.6% female"], ["Countries", "India 69.3% · Pakistan 11.6% · Bangladesh 5.0% · Nepal 2.4% · Saudi Arabia 0.4%"], ["Devices", "Mobile 82.0% · Computer 10.4% · TV 5.5% · Tablet 2.0%"], ["Notifications on", "21,600 subscribers"]], "Biggest videos": [["1", "Best Hacking Gadgets – Top 10 Dangerous Hacking Devices — 1,080,444 views"], ["2", "Hacking on Phone? Full Termux Course Start (Ep 1) — 467,620"], ["3", "30 Hacking Gadgets You Can Buy on Amazon — 256,451"], ["4", "How To Install Termux On Any PC — 140,229"], ["5", "How to install Kali Linux in Windows 11 — 96,771"]], "Udemy": [["Total enrolments", "1,911 · 1,881 unique students"], ["Average rating", "4.27 across both courses"], ["Complete Ethical Hacking Course (Hindi)", "150 students · rated 4.14"], ["Dark Web Complete Course", "1,761 students · rated 4.41"]], "How hard they actually work": [["Teaching consumed", "46,039 minutes in 12 months — 767 hours"], ["Active learners", "467 started a lecture in the last 12 months"], ["Paid course commitment", "280 minutes per active learner — 4.7 hours each"], ["Assignments submitted", "55, on real exercises"], ["Unanswered student questions", "0 — the Q&A is completely caught up"], ["Private message threads", "11 students wrote to you directly, and you replied to all of them"]], "Countries confirmed so far": [["Verified in the account", "India, Pakistan, Turkey, Jamaica, United States"], ["Note", "Udemy only lists about 200 of your 1,881 students, so this is a floor, not the full list"]], "Countries — 85 of them": [["Udemy's own count", "85 countries · 17 languages"], ["India", "59.7% — 1,123 students"], ["Pakistan", "8.4% — 158"], ["Bangladesh", "6.8% — 127"], ["United States", "2.8% — 52"], ["Nigeria", "1.5% — 28"], ["Then", "Nepal 20 · Canada 18 · Egypt 18 · Turkey 18 · Morocco 17 · Brazil 15 · France 15 · Italy 15 · Spain 11 · Ghana 11"], ["And on through", "Algeria, UK, UAE, Indonesia, Mexico, Saudi Arabia, Sri Lanka, Poland, Singapore, Argentina, Peru, Romania, South Africa, Colombia, Israel, Kenya, Philippines, Australia, Cambodia, Netherlands, Yemen, Azerbaijan, Jordan, Portugal, Senegal, Taiwan, Uzbekistan, Afghanistan, Bulgaria, Bahrain, Bolivia, Cameroon, Finland, Greece, Hong Kong, Iraq, Japan, Kuwait, Myanmar, Paraguay, Serbia, Tunisia, Uruguay, Vietnam, Angola, Austria, Belgium, Chile, Cyprus, Dominican Republic, Ecuador, Guatemala, Jamaica, Lebanon, Luxembourg, Libya, Madagascar, Oman, Panama, Palestine, Qatar, Sweden, Somalia, Tanzania, Uganda, Zambia, Zimbabwe"], ["Languages", "English 93.0% (1,749) · Spanish 2.2% (41) · French 1.2% (23) · Portuguese 0.9% (16) · Turkish 0.7% (14)"]], "What your LinkedIn currently says": [["Headline", "Co-Founder & CEH at Cyber Guard | 80K+ YouTube Subscribers | Certified Ethical Hacker (24+ Certifications)"], ["About", "'I hold 24+ industry certifications including Certified Ethical Hacker (CEH) and CPENT, and I've taught cybersecurity to 1,500+ students'"], ["Certifications actually listed", "2 — both LinkedIn Learning 'CompTIA Network+ Cert Prep' course completions, Feb 2023"], ["Experience", "Co-Founder, Cyber Guard, Nov 2023 – present · Content Creator, YouTube, Oct 2023 – present"], ["Education", "B.Tech Computer Engineering, KIIT Bhubaneswar, Aug 2023 – Aug 2027 · Tribhuvan University IOE, Pulchowk"], ["Numbers that disagree", "Headline says 80K+, About says 71K+, actual is 89,930. About says 1,500+ students, actual is 1,881."]]}, "sections": [{"title": "START HERE — CHECK MY NUMBERS", "known": "ALL", "note": "Anil bhai, before I ask you anything, here is everything I already pulled from your own YouTube Studio and Udemy account on 30 August 2026. I am not going to waste your time asking what a screen can tell me. Just read it once. If something is wrong or you would rather not publish it, say so — this is the proof the whole site stands on, so it has to be correct.", "qs": ["Anything above wrong, out of date, or that you do not want public?", "Any other channel, page or community of yours I should be counting?", "You know these numbers better than a dashboard does. Which one are you actually proud of, and why that one?", "Your LinkedIn headline says 80K subscribers, your About says 71K, and the channel is actually at 89,930. Which numbers do you want used, and should I give you corrected LinkedIn text to paste in?"]}, {"title": "YOUR NAME, YOUR DETAILS", "known": null, "note": "Boring but necessary. Two minutes.", "qs": ["Your full name, spelled exactly as it should appear", "Do you want your real name on the site, or only Cyber Guard?", "City and state", "The email you actually check", "Is the WhatsApp number from your video descriptions safe to publish?", "Every profile you want linked — Instagram, LinkedIn, Telegram, X, Discord"]}, {"title": "THE STORY ONLY YOU HAVE", "known": null, "note": "This is the heart of the site and the one thing no competitor can copy. Anyone can list certifications. Nobody else has your beginning. Write it plainly — what happened, in what order, how it felt. Hindi is completely fine, I will handle the rest. Do not polish it. Rough and true beats smooth and vague.", "qs": ["March 2023. What was going on in your life when you started the channel?", "How did you get into cybersecurity in the first place? Who or what pointed you at it?", "What did you do before this — job, studies, something else?", "Was there one moment you thought, this is the work I am going to do? Tell me what happened that day.", "What did people around you say when you started? Family, friends, relatives.", "What was the hardest stretch, and what got you through it?", "Which message from a student has stayed with you? Write it out if you still have it.", "On a bad week, when views are down and nothing is working — why do you still upload?"]}, {"title": "YOUR SIXTY SECONDS", "known": null, "note": "This is the most important section in the form. Everything at the top of the website comes from here. Two rules from the masterclass: say 'I', never 'we' — and every result needs a number or a name in it. If you have no number, use a before-and-after.", "qs": ["THE WEDDING TEST. A relative asks, 'Beta, tum karte kya ho?' Answer in one breath. Job title is banned — 'cybersecurity enthusiast' does not count. Try this shape: 'Main ______ ki madad karta hoon, taake ______.'", "THE HOOK, ten seconds. Who you help and what changes for them. Not what you are — what happens to them.", "THE PROOF, twenty seconds. One story. Something was broken or stuck, you did something, and something changed. Put a number in the ending.", "THE DIRECTION, fifteen seconds. Where is this going next? Nobody wants to join a full stop, everybody wants to join an arrow. What are you building towards?", "THE OPENING, fifteen seconds. End by handing it back. What question would you ask them, so the conversation carries on?", "PAR 1 — something you fixed. What was broken, what did YOU do, what changed? A number in the result.", "PAR 2 — something you built or grew. Same three parts.", "PAR 3 — someone you made better. Same three parts, and name them if you can.", "COUNT YOUR OWN NUMBERS, not the dashboards'. How many people have you personally taught, mentored, answered or helped get unstuck since you started?", "TWO WORDS. Shoaib Akhtar was the Rawalpindi Express. Dravid was The Wall. If someone described you to a friend in two or three words, what should they say?", "Where did you start from — town, background, situation? Your competitor can copy your certifications. He cannot copy where you began. Do not hide it."]}, {"title": "THE ONE THING YOU WANT TO OWN", "known": null, "note": "There are hundreds of hacking channels in Hindi. Your own audience also watches Cyber Haztech, Cyber Mind Space, Aapka Tech 2.0 and GadgetSploit. So the site cannot just say 'ethical hacking course'. It has to say what only you are. Take your time with these five — they decide every headline on the page.", "qs": ["Finish this: 'People come to Cyber Guard when they want to ______.'", "What do you do differently from every other hacking channel in Hindi?", "If a student could only remember one sentence from you, what should it be?", "What is the wrong idea about hacking that you are fighting against?", "Who is your teaching NOT for? Being clear about this makes the right people trust you faster."]}, {"title": "WHO YOU ARE TALKING TO", "known": null, "note": "Your students are not one crowd. 1,123 are in India, but 158 are in Pakistan, 127 in Bangladesh, 52 in the United States, 28 in Nigeria — 85 countries in all, and 93% of them run Udemy in English. Same teacher, very different lives. The site should make each of them feel it was written for them.", "qs": ["The Indian beginner, 18 to 24, learning on a phone with no laptop. What is he scared of, and what do you say to him?", "Does he have to convince his parents? What do they think he is doing?", "The student in Pakistan, Bangladesh or Nepal — does he need anything different?", "The English speaker in the US, UK, Canada, Australia. Why would he pick a Hindi teacher? Do you even want him?", "Nigeria, Egypt, Morocco, Ghana, Kenya — do you hear from them, and what do they ask?", "The Gulf — UAE, Saudi, Qatar, Kuwait, Oman. Working men or students?", "Which of these groups do you want more of?", "Is there anyone you would rather NOT attract?"]}, {"title": "WHAT ACTUALLY CHANGES FOR THEM", "known": null, "note": "Nobody buys a course. They buy the version of themselves on the other side of it. Describe both sides for me, honestly. No exaggeration — I would rather write something true and small than something big and hollow.", "qs": ["Describe your student the day BEFORE he starts. What can he not do? What is he worried about?", "Describe him three months later, if he actually does the work. What is different — skills, confidence, what he can show people?", "What is the very first thing a student manages to do that makes him feel like a hacker?", "Has anyone got a job, an internship, a certification or freelance work after learning from you? Names, what happened, and may I mention it?", "What can you honestly NOT promise? I would rather say this out loud on the page than have someone feel cheated."]}, {"title": "WHY PEOPLE DO NOT BUY", "known": null, "note": "1,761 people took your free Dark Web course. 150 bought the paid one. The gap between those two numbers is the whole job of this website. So tell me the truth about what stops them.", "qs": ["What is the number one reason someone watches everything free and never buys?", "Is it price? What price would feel fair to your audience — and what feels too cheap to trust?", "Do people say they will 'do it later' and disappear? What would change that?", "Do they doubt a Hindi course can be serious? How do you answer that?", "Do they worry it is illegal or will get them in trouble?", "Do they ask about a certificate? What do they actually want it for?", "What is the question you get asked before every single sale?"]}, {"title": "YOUR LMS AND WHAT YOU SELL", "known": null, "note": "You told me you already have an LMS and the site will connect to it. Good — that changes everything. It means you stop renting your students from Udemy and start owning them. Tell me exactly how it works so I can wire the site into it properly.", "qs": ["Which LMS is it? Name and the URL.", "Is it live already, or still being set up?", "What is inside it right now — which courses, how many hours?", "How does a student pay? UPI, Razorpay, Cashfree, card, bank transfer?", "Does it handle EMI or instalments?", "Does it issue a certificate? What does the certificate say?", "Does it have its own login, or should the site handle sign-up?", "Where exactly should a Buy button on the site send someone?", "Do you want the Udemy courses mentioned at all, or should the site point everything at your own LMS?", "Your Telegram community — how many members, and should the site push people to it?", "The mentorship programme — what is it, how long, what does it cost, how many have done it?", "What are you launching in the next six months?"]}, {"title": "THE OFFER", "known": null, "note": "Price is a message, not a number. The masterclass sets any price with four questions — the ceiling, the floor, the anchor and your power to walk away. Answer all four and the number sets itself.", "qs": ["CEILING — what is solving this problem actually worth to your student? A job, a skill he can charge for, a career change. Put a rupee value on it if you can.", "FLOOR — what does it genuinely cost you to deliver? Your time, recording, doubt support, the years it took you to learn it. Never price below this.", "ANCHOR — what do other Hindi cybersecurity courses charge? Not so you can undercut them. So you know the room.", "POWER — can you walk away from a cheap buyer? If somebody says it is too expensive, are you comfortable saying no?", "Now, knowing those four — what do you want to charge on your own site?", "What is your cheapest offer, and your most expensive?", "Is there anything free that leads into the paid course?", "What is included that a student would not expect? Doubt support, live sessions, community, lifetime updates, tools?", "How fast do you answer a student who is stuck? Be honest — this is one of your strongest selling points.", "Do you offer a refund? Say it in your own words.", "Is there a real reason to buy now instead of next month — a closing batch, a live cohort, a price rise? Only real ones. I will not invent urgency."]}, {"title": "YOUR CERTIFICATIONS", "known": null, "note": "I opened your LinkedIn. It says '24+ industry certifications including CEH and CPENT' — but the Licenses & certifications section lists only two, and both are LinkedIn Learning 'Network+ Cert Prep' course completions from Feb 2023. A prep course is not the certification. I am not doubting you — most people never upload their certificates. But your buyers are security people, and EC-Council publishes a public verification portal, so anything on this website has to be real and checkable. Give me the true list and I will present it well. A smaller honest list beats a big number that someone disproves.", "qs": ["Do you hold the actual CEH certification from EC-Council? If yes: your certificate number and the year, so it can be verified on EC-Council's Aspen portal.", "Do you hold CPENT? Same — number and year.", "List every other certification you genuinely hold: exact name, who issued it, which year, and whether it is current.", "Which of these are exam-based certifications, and which are course-completion certificates? Both are fine on the site — they just have to be labelled correctly.", "Where does the number 24 come from? Count them out for me so we can print a number you can defend.", "Do you have a Credly, Accredible or EC-Council Aspen page I can link to?", "Can you send photographs or PDFs of the certificates?", "Your degree: B.Tech Computer Engineering at KIIT, 2023 to 2027. Do you want it on the site? Being a student who built an 89K channel is a strong story, not a weak one.", "Any certification you are studying for right now?"]}, {"title": "PROOF I CANNOT SEE FROM HERE", "known": null, "note": "I have your ratings and your numbers. What I do not have is what people say to you privately. Your Udemy written reviews are very short, so if the good stuff lives in WhatsApp, Telegram or YouTube comments, send it here.", "qs": ["Screenshots of student messages, comments or DMs that meant something — send the images", "Do you have permission from those people to publish their words and names?", "Any press, podcast, interview or collaboration with another creator?", "Have you taught at a college, school, or event?", "Anyone well known in the Indian cybersecurity space who knows your work?"]}, {"title": "BRAND COLLABORATIONS", "known": null, "note": "You want brands to find you and book you from the site without a long back and forth. Your numbers already justify it — 141,400 people a month, 90.4% male, 69% aged 18 to 34. What is missing is your terms.", "qs": ["Which brands have sponsored you before? May I name them?", "Your rate for a dedicated video, an integration, a Short, and a description link", "What will you never promote, at any price?", "How much notice do you need?", "Do you have a media kit already?", "Would you rather a brand books a call slot directly, or writes to you first?", "Which email should sponsorship enquiries go to?"]}, {"title": "HOW YOU TALK", "known": null, "note": "The site has to sound like you, not like a company. Give me a feel for your voice.", "qs": ["Should the site be in English, Hindi, or a mix the way you actually speak?", "Words or phrases you use all the time in your videos", "Anything that would make you cringe to see written under your name?", "How do you greet your audience at the start of a video? Word for word.", "Do you want to sound like a teacher, a senior bhai, a professional, or something else?"]}, {"title": "THINGS I HAVE TO ASK", "known": null, "note": "You sell teaching, in India, and 13.4% of your audience is under eighteen. These answers decide what the site is allowed to say. Short answers are fine — I am asking so that nothing on your page can be used against you later.", "qs": ["Do you promise anywhere that a student will get a job, a salary or a certification? Write the promise exactly as you make it.", "What evidence do you have for it?", "Are your courses approved or accredited by any body, or is it your own teaching? Either answer is fine, it just has to be accurate.", "Do you name specific scammers, apps or companies as fraudulent in your videos?", "Have you ever had a legal notice, a strike, or a takedown?", "The site will carry a line saying everything is for education and authorised testing only. Any objection?", "The mentorship is currently called 'Black Hat'. On a public page with your name and a payment link I would rather call it something else. What should it be called?"]}, {"title": "LINES I SHOULD NOT CROSS", "known": null, "note": "", "qs": ["What do you not want on this website?", "Anything about your family, home or exact location that stays off?", "Have you been doxxed, targeted or harassed? Anything I should avoid making easier to find?", "Does anyone else need to approve this before it goes live?"]}, {"title": "PRACTICAL", "known": null, "note": "", "qs": ["cyberguardhacker.com is registered and empty. Is that the domain?", "Photographs — send the best ones you have of yourself, plus your logo and channel artwork", "Who took the photos, and may I publish them?", "May I create additional images of you for the site?", "When do you need it live?", "A website whose feel you like — send the link", "Anything I did not ask?"]}]};
+(function(){
+  "use strict";
+  var KEY='cyberguard-intake-v1', store={};
+  try{ store=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){ store={}; }
+  var stEl,sto;
+  function save(){ try{ localStorage.setItem(KEY,JSON.stringify(store));
+    stEl=stEl||document.getElementById('saved'); stEl.classList.add('on');
+    clearTimeout(sto); sto=setTimeout(function(){stEl.classList.remove('on');},1400);}catch(e){} }
+  function sentence(s){ var t=s.charAt(0)+s.slice(1).toLowerCase();
+    t=t.replace(/\bi\b/g,'I').replace(/\bi'/g,"I'");
+    return t.replace(/\b(lms|upi|emi|uae|uk|us|faq)\b/gi,function(m){return m.toUpperCase();}); }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+
+  var form=document.getElementById('form'), nav=document.getElementById('nav'), total=0;
+
+  CONTENT.sections.forEach(function(sec,si){
+    var id='sec-'+si, el=document.createElement('section'); el.id=id;
+    if(/HAVE TO ASK/.test(sec.title)) el.className='careful';
+    if(/LMS|OFFER|WHY PEOPLE DO NOT BUY|SIXTY SECONDS/.test(sec.title)) el.className='key';
+    if(/CERTIFICATIONS/.test(sec.title)) el.className='careful';
+    var h='<p class="sn">'+String(si+1).padStart(2,'0')+' &mdash; '+esc(sec.title)+'</p>';
+    h+='<h2>'+esc(sentence(sec.title))+'</h2>';
+    if(sec.note) h+='<p class="note">'+esc(sec.note)+'</p>';
+    if(sec.known==='ALL'){
+      h+='<div class="known"><h3>Confirmed from your own accounts &middot; 30 Aug 2026</h3>';
+      Object.keys(CONTENT.known).forEach(function(g){
+        h+='<div class="kgrp"><b>'+esc(g)+'</b>';
+        CONTENT.known[g].forEach(function(pair){
+          h+='<div class="krow"><i>'+esc(pair[0])+'</i><span>'+esc(pair[1])+'</span></div>';
+        });
+        h+='</div>';
+      });
+      h+='</div>';
+    }
+    sec.qs.forEach(function(q,qi){
+      var k=si+'.'+qi; total++;
+      h+='<div class="q"><label for="f'+si+'_'+qi+'">'+esc(q)+'</label>'+
+         '<textarea id="f'+si+'_'+qi+'" data-k="'+k+'" placeholder="Your answer">'+
+         esc(store[k]||'')+'</textarea></div>';
+    });
+    el.innerHTML=h; form.appendChild(el);
+    var li=document.createElement('li');
+    li.innerHTML='<a href="#'+id+'" data-s="'+si+'"><span class="dot" id="d'+si+'"></span>'+
+      '<span class="nn">'+String(si+1).padStart(2,'0')+'</span><span>'+esc(sentence(sec.title))+'</span></a>';
+    nav.appendChild(li);
+  });
+
+  var areas=[].slice.call(document.querySelectorAll('textarea'));
+  function grow(t){ t.style.height='auto'; t.style.height=(t.scrollHeight+2)+'px'; }
+  areas.forEach(function(t){
+    grow(t); if(t.value.trim()) t.classList.add('filled');
+    t.addEventListener('input',function(){
+      grow(t); store[t.dataset.k]=t.value;
+      t.classList.toggle('filled',!!t.value.trim());
+      clearTimeout(t._t); t._t=setTimeout(save,400); progress();
+    });
+  });
+
+  var ring=document.getElementById('ring'), C=2*Math.PI*18;
+  function progress(){
+    var done=0;
+    CONTENT.sections.forEach(function(sec,si){
+      var n=0; sec.qs.forEach(function(_,qi){ if((store[si+'.'+qi]||'').trim()) n++; });
+      done+=n; var d=document.getElementById('d'+si);
+      if(d) d.className='dot'+(n===sec.qs.length?' done':n?' part':'');
+    });
+    var p=total?Math.round(done/total*100):0;
+    document.getElementById('pct').textContent=p+'%';
+    document.getElementById('cnt').textContent=done+' of '+total;
+    ring.setAttribute('stroke-dasharray',(C*p/100).toFixed(1)+' '+C.toFixed(1));
+    document.getElementById('motrack').style.width=p+'%';
+    document.getElementById('mopct').textContent=p;
+  }
+  progress();
+
+  if('IntersectionObserver' in window){
+    var links={}; [].forEach.call(nav.querySelectorAll('a'),function(a){links[a.getAttribute('href').slice(1)]=a;});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      var a=links[e.target.id]; if(!a)return;
+      if(e.isIntersecting){[].forEach.call(nav.querySelectorAll('a'),function(x){x.classList.remove('active');});
+        a.classList.add('active');}});},{rootMargin:'-10% 0px -75% 0px'});
+    CONTENT.sections.forEach(function(_,si){io.observe(document.getElementById('sec-'+si));});
+  }
+
+  function text(){
+    var o=['CYBER GUARD - WEBSITE QUESTIONS',''];
+    var nm=(store['1.0']||'').trim(); if(nm) o.push('From: '+nm);
+    o.push('Completed: '+new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}),'');
+    CONTENT.sections.forEach(function(sec,si){
+      o.push('','== '+sec.title+' ==','');
+      sec.qs.forEach(function(q,qi){
+        o.push(q,(store[si+'.'+qi]||'').trim()||'(not answered)','');
+      });
+    });
+    return o.join('\n');
+  }
+  function copy(btn){
+    var t=text(), old=btn.textContent;
+    function ok(){btn.textContent='Copied';setTimeout(function(){btn.textContent=old;},1600);}
+    function fb(){var a=document.createElement('textarea');a.value=t;a.style.position='fixed';
+      a.style.opacity='0';document.body.appendChild(a);a.select();
+      try{document.execCommand('copy');ok();}catch(e){btn.textContent='Press Ctrl+C';}
+      document.body.removeChild(a);}
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(ok,fb);}else fb();
+  }
+  function dl(){
+    var n=((store['1.0']||'anil').trim().toLowerCase().replace(/[^a-z0-9]+/g,'-')||'anil');
+    var b=new Blob([text()],{type:'text/plain;charset=utf-8'}), u=URL.createObjectURL(b);
+    var a=document.createElement('a'); a.href=u; a.download=n+'-website-answers.txt';
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){URL.revokeObjectURL(u);document.body.removeChild(a);},200);
+  }
+  document.getElementById('copy').addEventListener('click',function(){copy(this);});
+  document.getElementById('copy2').addEventListener('click',function(){copy(this);});
+  document.getElementById('dl').addEventListener('click',dl);
+  document.getElementById('dl2').addEventListener('click',dl);
+  document.getElementById('prt').addEventListener('click',function(){window.print();});
+  document.getElementById('clear').addEventListener('click',function(){
+    if(!confirm('Clear every answer on this device?'))return;
+    store={}; try{localStorage.removeItem(KEY);}catch(e){}
+    areas.forEach(function(t){t.value='';t.classList.remove('filled');grow(t);}); progress();
+  });
+})();
+</script>
+</body>
+</html>
