@@ -13,9 +13,9 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23B0455F'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='18' fill='%23FBF7F4' text-anchor='middle'%3EF%3C/text%3E%3C/svg%3E">
 <style>
 :root{
-  --paper:#FBF7F4; --card:#FFFFFF; --tint:#F5EBEA;
-  --ink:#2A1F26; --ink-2:#57454F; --mid:#7A6670;
-  --rose:#A83C58; --rose-lt:#C9748A; --gold:#8A6B2F; --rule:#E9DDE0;
+  --paper:#F7F6F3; --card:#FFFFFF; --tint:#EFEDE8;
+  --ink:#1E1C1A; --ink-2:#474441; --mid:#6C6862;
+  --rose:#7C2F41; --rose-lt:#A8687A; --gold:#755E2C; --rule:#E1DED8;
   --disp:"Fraunces",Georgia,serif;
   --body:"Karla",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 }
@@ -23,7 +23,17 @@
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);
   font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
 .wrap{max-width:760px;margin:0 auto;padding:0 22px}
-header{padding:58px 0 34px;border-bottom:1px solid var(--rule)}
+header{padding:44px 0 38px;border-bottom:1px solid var(--rule)}
+.mast{border-bottom:1px solid var(--rule);background:var(--card)}
+.mastin{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:13px 22px}
+.mk{font-size:11.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--mid);font-weight:600}
+.mk-r{color:var(--gold)}
+.toc{border-top:1px solid var(--rule);margin-top:30px;padding-top:22px}
+.toc b{display:block;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin-bottom:12px}
+.toc ol{margin:0;padding-left:20px;columns:2;column-gap:34px}
+.toc li{font-size:14.5px;color:var(--ink-2);margin-bottom:6px;break-inside:avoid}
+@media(max-width:560px){ .toc ol{columns:1} }
 .eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--rose);
   font-weight:600;margin:0 0 16px}
 h1{font-family:var(--disp);font-weight:400;font-size:clamp(30px,5.4vw,46px);line-height:1.1;
@@ -60,22 +70,44 @@ footer{padding:40px 0 70px;color:var(--mid);font-size:14.5px}
 </style>
 </head>
 <body>
+<div class="mast"><div class="wrap mastin">
+  <span class="mk">Brand partnership intake</span>
+  <span class="mk mk-r">Confidential &middot; 78 questions &middot; about 55 minutes</span>
+</div></div>
+
 <header><div class="wrap">
-  <p class="eyebrow">Faiza &middot; thefaizaglam</p>
-  <h1>Everything I need to build a site that makes brands come to you.</h1>
-  <p class="lede">I have already pulled everything that is public. Your numbers, your top reels, your
-     brands, your audience. That part is done and it is in this form so you can check it.</p>
-  <p class="lede">What is left is the part only you know. Take your time on those. Short honest
-     answers beat long polished ones.</p>
-  <div class="note"><b>Nothing here gets published without your say so.</b> If a question feels too
-     personal, skip it. If a number is wrong, correct it. I would rather have a page with less on it
-     that is completely true than a page a brand can catch out.</div>
+  <p class="eyebrow">Prepared for Faiza &middot; thefaizaglam</p>
+  <h1>Everything needed to build a site that brings brands to you.</h1>
+  <p class="lede">Everything publicly available has already been collected and entered below. Your
+     figures, your strongest reels, the brands on your grid and what your audience looks like.
+     Review those sections and correct anything that is wrong.</p>
+  <p class="lede">The remaining questions cover what is not visible from the outside. Brief, accurate
+     answers are more useful than polished ones.</p>
+  <div class="note"><b>Nothing in this document is published without your approval.</b> Skip any
+     question you would rather not answer. A page carrying less information that is entirely accurate
+     is worth more than one a brand can disprove.</div>
+  <div class="toc">
+    <b>Contents</b>
+    <ol>
+      <li>Verify the figures on record</li>
+      <li>Commercial work completed to date</li>
+      <li>Positioning</li>
+      <li>Background</li>
+      <li>Audience</li>
+      <li>Formats and delivery</li>
+      <li>Rates</li>
+      <li>The written approach</li>
+      <li>Restrictions</li>
+      <li>Material to supply separately</li>
+      <li>Practical</li>
+    </ol>
+  </div>
 </div></header>
 
 <section><div class="wrap">
   <p class="snum">01 &middot; Start here</p>
-  <h2>Check my numbers.</h2>
-  <p class="sub">Everything below is from your public profiles. Tell me what is wrong or out of date.</p>
+  <h2>Verify the figures on record.</h2>
+  <p class="sub">All figures below were taken from your public profiles. Please correct anything inaccurate or out of date.</p>
 
   <div class="known">
     <div class="kh">Instagram &middot; thefaizaglam</div>
@@ -120,11 +152,11 @@ footer{padding:40px 0 70px;color:var(--mid);font-size:14.5px}
 </div></section>
 
 <section><div class="wrap">
-  <p class="snum">02 &middot; The work you have already done</p>
-  <h2>The paid jobs, not the gifts.</h2>
-  <p class="sub">This is the most valuable section in the form. A brand that sees you have been hired
-     and delivered behaves completely differently from one who thinks you have only ever been sent
-     free things.</p>
+  <p class="snum">02 &middot; Commercial history</p>
+  <h2>Commercial work completed to date.</h2>
+  <p class="sub">This is the most commercially valuable section. A brand that can see you have been
+     engaged and delivered treats the conversation differently from one that assumes you have only
+     ever received gifted product.</p>
 
   <div class="q"><label>The dermatology clinic in Manhattan. Send me the link to that reel.</label>
     <span class="hint">I searched your whole grid and could not find it. Paste the link, or the clinic
@@ -148,16 +180,21 @@ footer{padding:40px 0 70px;color:var(--mid);font-size:14.5px}
     <input type="text"></div>
 </div></section>
 <section><div class="wrap">
-  <p class="snum">03 &middot; Your sixty seconds</p>
+  <p class="snum">03 &middot; Positioning</p>
   <h2>If a brand gave you one minute.</h2>
-  <p class="sub">These few answers become the top of the page. They are the hardest questions here
-     and the most valuable. Answer them the way you would say them out loud.</p>
+  <p class="sub">These answers become the opening of the site. They are the most demanding questions
+     here and the most important. Write them as you would say them aloud.</p>
 
   <div class="q"><label>THE WEDDING TEST. A relative asks what you do. One breath, no job title.</label>
     <span class="hint">"Beauty influencer" does not count. Try this shape: I help ______ so that ______.</span>
     <textarea></textarea></div>
   <div class="q"><label>THE HOOK, ten seconds. Who do you help, and what changes for them?</label>
     <span class="hint">Two audiences here: the women watching, and the brands paying. Answer for both if they differ.</span>
+    <textarea></textarea></div>
+  <div class="q"><label>THE PROBLEM. What hurts before you arrive?</label>
+    <span class="hint">If you cannot name what is wrong for them, you are not selling, you are announcing.
+      For the woman watching: what is she getting wrong before your video? For the brand: what is failing
+      in their marketing before you make the reel?</span>
     <textarea></textarea></div>
   <div class="q"><label>THE PROOF, twenty seconds. One story. Something was stuck, you did something, something changed. Put a number at the end.</label>
     <textarea></textarea></div>
@@ -168,6 +205,8 @@ footer{padding:40px 0 70px;color:var(--mid);font-size:14.5px}
     <textarea></textarea></div>
 
   <div class="q"><label>PAR 1. Something you fixed. What was broken, what did you do, what changed? A number in the result.</label>
+    <span class="hint">Three rules for all three: say "I" not "we", keep it to one or two sentences, and
+      finish on a number.</span>
     <textarea></textarea></div>
   <div class="q"><label>PAR 2. Something you built or grew. Same three parts.</label>
     <textarea></textarea></div>
@@ -175,19 +214,43 @@ footer{padding:40px 0 70px;color:var(--mid);font-size:14.5px}
     <span class="hint">A follower who learned something. A brand whose product moved. Anyone.</span>
     <textarea></textarea></div>
 
-  <div class="q"><label>COUNT YOUR OWN NUMBERS, not the dashboard's. How many people have you personally replied to, taught or helped since you started?</label>
-    <span class="hint">DMs answered, questions in comments, women who asked what product you used. The dashboard cannot see this and it is often the truest number you have.</span>
+  <div class="q"><label>COUNT YOUR OWN NUMBERS. How many?</label>
+    <span class="hint">DMs answered, comments replied to, women who asked what product you used and got a
+      real answer. The dashboard cannot see any of this and it is often the truest number you have.</span>
+    <textarea></textarea></div>
+  <div class="q"><label>How much? Any rupee or dollar figure you have moved.</label>
+    <span class="hint">Product value gifted to you, affiliate sales through your codes, anything a brand
+      earned because of a post. Even rough.</span>
+    <textarea></textarea></div>
+  <div class="q"><label>How fast? Anything you turn around quicker than people expect.</label>
+    <span class="hint">Brief to posted in how many days. Filming to edit in how many hours.</span>
+    <input type="text"></div>
+  <div class="q"><label>How well? Your own quality numbers.</label>
+    <span class="hint">Save rate, share rate, watch time, repeat viewers, comments asking for the product
+      name. These sit in your insights and almost no creator quotes them.</span>
+    <textarea></textarea></div>
+  <div class="q"><label>How many people have you taught something they did not know?</label>
     <textarea></textarea></div>
   <div class="q"><label>TWO WORDS. If someone described you to a friend in two or three words, what should they say?</label>
     <input type="text"></div>
+  <div class="q"><label>What do you think people already say about you when you are not in the room?</label>
+    <span class="hint">You have a reputation whether you chose it or not. Somebody is describing you in one
+      sentence right now. Best guess at that sentence.</span>
+    <textarea></textarea></div>
+  <div class="q"><label>PICK ONE LANE. Finish this: not "beauty influencer", but ______.</label>
+    <span class="hint">A smaller pond where you are known beats an ocean where you are invisible.
+      "Graphic designer" becomes "I design packaging for food brands abroad". What is yours? Hijabi
+      everyday beauty? Two-product looks for women with no time? Drugstore products that look expensive?
+      Narrow it until it feels almost too narrow.</span>
+    <textarea></textarea></div>
   <div class="q"><label>Where did you start from? Your competitor can copy your ring light. She cannot copy where you began.</label>
     <span class="hint">Pakistan, New York, the first video, who doubted it. Do not hide it, it is the part nobody else has.</span>
     <textarea></textarea></div>
 </div></section>
 
 <section><div class="wrap">
-  <p class="snum">04 &middot; Your story</p>
-  <h2>The part only you have.</h2>
+  <p class="snum">04 &middot; Background</p>
+  <h2>Background.</h2>
   <div class="q"><label>When and why did you start posting? What was going on in your life?</label>
     <textarea></textarea></div>
   <div class="q"><label>What did people around you say when you started?</label>
@@ -204,10 +267,11 @@ footer{padding:40px 0 70px;color:var(--mid);font-size:14.5px}
 </div></section>
 
 <section><div class="wrap">
-  <p class="snum">05 &middot; Who is watching</p>
-  <h2>Your audience, in your words.</h2>
-  <p class="sub">Your comments come in Arabic, Urdu, Turkish, Russian, Spanish, French and Indonesian.
-     That is unusual and it is worth money. Help me describe it properly.</p>
+  <p class="snum">05 &middot; Audience</p>
+  <h2>Your audience, in your own words.</h2>
+  <p class="sub">Your comments arrive in Arabic, Urdu, Turkish, Russian, Spanish, French and
+     Indonesian. An audience that international is unusual at any follower count and it is a
+     commercial asset. Help me describe it accurately.</p>
   <div class="q"><label>Who do you think actually watches you? Age, country, situation.</label>
     <textarea></textarea></div>
   <div class="q"><label>What do they ask you most often?</label>
@@ -218,8 +282,8 @@ footer{padding:40px 0 70px;color:var(--mid);font-size:14.5px}
     <textarea></textarea></div>
 </div></section>
 <section><div class="wrap">
-  <p class="snum">06 &middot; What a brand actually buys</p>
-  <h2>Your formats and your turnaround.</h2>
+  <p class="snum">06 &middot; Formats and delivery</p>
+  <h2>Formats, usage and delivery.</h2>
   <p class="sub">Something I noticed and want to check with you: both of your biggest reels name no
      brand at all. The 3.6M was a two product, five minute look. The 1M was a mascara hack. Your
      viral formula is <b>technique</b>, not product review. That is worth saying out loud, because a
@@ -245,11 +309,11 @@ footer{padding:40px 0 70px;color:var(--mid);font-size:14.5px}
 </div></section>
 
 <section><div class="wrap">
-  <p class="snum">07 &middot; The offer</p>
-  <h2>What you charge, and why.</h2>
-  <p class="sub">You do not have a rate card. That is the single biggest thing costing you money
-     right now, because a brand with no number in front of them either lowballs or goes quiet.
-     Work through these four and the number falls out of them.</p>
+  <p class="snum">07 &middot; Rates</p>
+  <h2>Rates.</h2>
+  <p class="sub">You do not currently have a rate card, and that is the single largest thing costing
+     you money. A brand with no figure in front of it will either open low or go quiet. Work through
+     the four questions below and the number follows from them.</p>
 
   <div class="q"><label>CEILING. What is a post from you actually worth to the brand?</label>
     <span class="hint">If your reel does 100K views for a product that costs them $8 to send, what would that reach have cost them in ads? That is the ceiling.</span>
@@ -268,15 +332,54 @@ footer{padding:40px 0 70px;color:var(--mid);font-size:14.5px}
     <textarea></textarea></div>
   <div class="q"><label>Will you still accept gifted only work? If so, for what kind of brand?</label>
     <textarea></textarea></div>
+  <div class="q"><label>THE FREE WORK TEST. Before accepting a gifted job, finish this sentence: what am I buying with this?</label>
+    <span class="hint">Free that pays you back buys a testimonial, a case study, or a door you cannot open
+      yet. Free that drains you is a favour for someone who could have paid. If you cannot name what you
+      are buying, the answer is no. Which gifted jobs have actually bought you something, and which just
+      cost you a day?</span>
+    <textarea></textarea></div>
+  <div class="q"><label>SAME WORK, THREE PRICES. Does one reel cost the same to a small K-beauty brand and to L'Occitane?</label>
+    <span class="hint">A logo is 500 rupees to a street cart and five lakh to a bank. The work did not
+      change, the room did. Should your rate move with the size of the brand, and roughly how?</span>
+    <textarea></textarea></div>
+  <div class="q"><label>When a brand asks for your rates before you know anything about the job, what do you want to say?</label>
+    <span class="hint">Answering first is how creators get anchored low. A holding line that asks about
+      deliverables, usage and timing before naming a number is usually worth real money. I can write you
+      one, but tell me how you would rather handle it.</span>
+    <textarea></textarea></div>
   <div class="q"><label>Do you want prices shown on the site, or "rates on request"?</label>
     <span class="hint">Shown filters out time wasters. Hidden keeps you flexible. Both are valid.</span>
     <input type="text"></div>
 </div></section>
 
 <section><div class="wrap">
-  <p class="snum">08 &middot; Lines</p>
-  <h2>What you will not do.</h2>
-  <p class="sub">Saying no clearly makes the right brands trust you faster.</p>
+  <p class="snum">08 &middot; The written approach</p>
+  <h2>The message you send first.</h2>
+  <p class="sub">Waiting to be found is slower than reaching out. Four lines is the whole message, and
+     the only measure of success is that they reply at all.</p>
+  <div class="q"><label>LINE 1. Proof you know them. One real detail about the brand.</label>
+    <span class="hint">Not "I love your products". Something specific: a launch, a shade range, a market
+      they just entered. Pick a brand you actually want and write the line for them.</span>
+    <textarea></textarea></div>
+  <div class="q"><label>LINE 2. What you do. One sentence, nothing more.</label>
+    <textarea></textarea></div>
+  <div class="q"><label>LINE 3. Why them specifically.</label>
+    <textarea></textarea></div>
+  <div class="q"><label>LINE 4. A small ask. Small enough that saying yes costs them nothing.</label>
+    <textarea></textarea></div>
+  <div class="q"><label>THE EVIDENCE FILE. Do you keep a record of every result, screenshot and kind word?</label>
+    <span class="hint">One document. Every reel that performed, every brand comment, every message saying
+      thank you, each with a date and a number. Most creators throw this away weekly and then have nothing
+      to show when it is time to raise a rate. If you have one, send it. If not, start it this week.</span>
+    <textarea></textarea></div>
+  <div class="q"><label>Name five brands you actually want. Not realistic ones. The ones you want.</label>
+    <textarea></textarea></div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="snum">09 &middot; Restrictions</p>
+  <h2>Restrictions.</h2>
+  <p class="sub">Stating clearly what you decline builds trust with the brands you do want.</p>
   <div class="q"><label>What will you never promote, at any price?</label>
     <textarea></textarea></div>
   <div class="q"><label>Anything you will not show on camera?</label>
@@ -291,8 +394,8 @@ footer{padding:40px 0 70px;color:var(--mid);font-size:14.5px}
 </div></section>
 
 <section><div class="wrap">
-  <p class="snum">09 &middot; What I cannot see</p>
-  <h2>Please send these separately.</h2>
+  <p class="snum">10 &middot; What I cannot see</p>
+  <h2>Material to supply separately.</h2>
   <div class="q"><label>Instagram Insights screenshots.</label>
     <span class="hint">Professional dashboard, then Insights, then Total followers. I need audience age,
       gender, top countries and top cities. A media kit without these gets skipped. This is the most
@@ -311,8 +414,8 @@ footer{padding:40px 0 70px;color:var(--mid);font-size:14.5px}
 </div></section>
 
 <section><div class="wrap">
-  <p class="snum">10 &middot; Practical</p>
-  <h2>Last few.</h2>
+  <p class="snum">11 &middot; Practical</p>
+  <h2>Practical.</h2>
   <div class="q"><label>Do you own a domain? If not, what would you like it to be?</label>
     <input type="text"></div>
   <div class="q"><label>Should the site sound like you speak, or more formal for brands?</label>
@@ -326,8 +429,9 @@ footer{padding:40px 0 70px;color:var(--mid);font-size:14.5px}
 </div></section>
 
 <footer><div class="wrap">
-  Prepared for Faiza &middot; thefaizaglam. Nothing in this form is published without her approval.
-  Numbers shown were taken from public profiles and are hers to correct.
+  Brand partnership intake &middot; prepared for Faiza, thefaizaglam. Confidential. No content from
+  this document is published without her written approval. All figures shown were taken from public
+  profiles on the date of preparation and are hers to correct.
 </div></footer>
 </body>
 </html>
