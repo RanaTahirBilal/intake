@@ -67,9 +67,54 @@ input:focus,textarea:focus{outline:none;border-color:var(--rose-lt);
 .row span{flex:1;color:var(--ink);font-weight:500}
 footer{padding:40px 0 70px;color:var(--mid);font-size:14.5px}
 @media(max-width:560px){ .row{flex-direction:column;gap:2px} .row b{flex:none} }
+
+/* ---- phone first: this form is 22,000px tall and gets filled on a phone ---- */
+.bar{position:sticky;top:0;z-index:50;background:rgba(247,246,243,.96);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.barin{max-width:760px;margin:0 auto;padding:9px 22px;display:flex;align-items:center;gap:12px}
+.ptrack{flex:1;height:5px;background:var(--rule);border-radius:99px;overflow:hidden}
+.pfill{height:100%;width:0;background:var(--rose);border-radius:99px;transition:width .45s ease}
+.pnum{font-size:12px;font-weight:600;color:var(--mid);letter-spacing:.04em;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.saved{font-size:11.5px;color:var(--gold);font-weight:600;opacity:0;transition:opacity .3s}
+.saved.on{opacity:1}
+
+.resume{display:none;background:var(--tint);border:1px solid var(--rule);border-radius:10px;
+  padding:15px 17px;margin:0 0 22px;font-size:15px;color:var(--ink-2)}
+.resume.on{display:block}
+.resume b{color:var(--ink)}
+.btn{display:inline-block;font-family:var(--body);font-size:15.5px;font-weight:600;
+  background:var(--rose);color:#fff;border:0;border-radius:9px;padding:13px 22px;
+  cursor:pointer;letter-spacing:.01em;line-height:1.2;-webkit-appearance:none}
+.btn:active{opacity:.86}
+.btn.ghost{background:transparent;color:var(--rose);border:1px solid var(--rule);padding:12px 18px}
+.done{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:24px 20px;margin-top:8px}
+.done h3{font-family:var(--disp);font-weight:400;font-size:23px;margin:0 0 8px}
+.done p{font-size:15.5px;color:var(--ink-2);margin:0 0 18px}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap}
+#dump{width:100%;min-height:190px;margin-top:16px;display:none;font-size:14px}
+#dump.on{display:block}
+
+@media(max-width:560px){
+  .wrap{padding:0 18px}
+  h1{font-size:29px}
+  .q{margin-bottom:22px}
+  .q label{font-size:15.5px}
+  input[type=text],textarea{padding:12px 13px;font-size:16px}  /* 16px stops iOS zooming on focus */
+  textarea{min-height:104px}
+  .barin{padding:8px 18px}
+  .btn,.btn.ghost{width:100%;text-align:center;padding:15px 20px}
+  section{padding:34px 0}
+}
 </style>
 </head>
 <body>
+<div class="bar"><div class="barin">
+  <span class="pnum" id="pnum">0 / 77</span>
+  <span class="ptrack"><span class="pfill" id="pfill"></span></span>
+  <span class="saved" id="saved">Saved</span>
+</div></div>
+
 <div class="mast"><div class="wrap mastin">
   <span class="mk">Brand partnership intake</span>
   <span class="mk mk-r">Confidential &middot; 78 questions &middot; about 55 minutes</span>
@@ -86,6 +131,8 @@ footer{padding:40px 0 70px;color:var(--mid);font-size:14.5px}
   <div class="note"><b>Nothing in this document is published without your approval.</b> Skip any
      question you would rather not answer. A page carrying less information that is entirely accurate
      is worth more than one a brand can disprove.</div>
+  <div class="resume" id="resume"><b>Your previous answers have been restored.</b>
+     This page saves everything on your phone as you type, so you can close it and come back.</div>
   <div class="toc">
     <b>Contents</b>
     <ol>
@@ -428,10 +475,101 @@ footer{padding:40px 0 70px;color:var(--mid);font-size:14.5px}
     <textarea></textarea></div>
 </div></section>
 
+<section><div class="wrap">
+  <p class="snum">Finish</p>
+  <h2>Sending your answers back.</h2>
+  <div class="done">
+    <h3>When you are done</h3>
+    <p>Tap below to copy everything you have written, then paste it into WhatsApp or email.
+       Nothing is sent automatically and nothing leaves your phone until you paste it.</p>
+    <div class="btnrow">
+      <button class="btn" id="copy" type="button">Copy my answers</button>
+      <button class="btn ghost" id="show" type="button">Show as text</button>
+    </div>
+    <textarea id="dump" readonly></textarea>
+  </div>
+</div></section>
+
 <footer><div class="wrap">
   Brand partnership intake &middot; prepared for Faiza, thefaizaglam. Confidential. No content from
   this document is published without her written approval. All figures shown were taken from public
   profiles on the date of preparation and are hers to correct.
 </div></footer>
+
+<script>
+(function(){
+  var K='faiza-intake-v1';
+  var fields=[].slice.call(document.querySelectorAll('input[type=text],textarea')).filter(function(e){return e.id!=='dump';});
+  fields.forEach(function(el,i){
+    el.setAttribute('data-k','q'+i);
+    if(el.tagName==='TEXTAREA'){el.setAttribute('autocapitalize','sentences');el.setAttribute('spellcheck','true');}
+  });
+  function label(el){
+    var q=el.closest('.q'); var l=q?q.querySelector('label'):null;
+    return l?l.textContent.trim():'';
+  }
+  function store(){ try{return JSON.parse(localStorage.getItem(K)||'{}')}catch(e){return {}} }
+  function save(){
+    try{
+      var o={}; fields.forEach(function(el){ if(el.value.trim()) o[el.dataset.k]=el.value; });
+      localStorage.setItem(K,JSON.stringify(o));
+      var s=document.getElementById('saved'); s.classList.add('on');
+      clearTimeout(window._st); window._st=setTimeout(function(){s.classList.remove('on')},1400);
+    }catch(e){}
+  }
+  function progress(){
+    var n=fields.filter(function(el){return el.value.trim()}).length;
+    document.getElementById('pnum').textContent=n+' / '+fields.length;
+    document.getElementById('pfill').style.width=(n/fields.length*100)+'%';
+  }
+  // restore
+  try{
+    var s=store(), any=false;
+    fields.forEach(function(el){ if(s[el.dataset.k]){ el.value=s[el.dataset.k]; any=true; } });
+    if(any) document.getElementById('resume').classList.add('on');
+  }catch(e){}
+  progress();
+
+  var t;
+  fields.forEach(function(el){
+    el.addEventListener('input',function(){
+      progress(); clearTimeout(t); t=setTimeout(save,450);
+      if(el.tagName==='TEXTAREA'){ el.style.height='auto'; el.style.height=(el.scrollHeight+2)+'px'; }
+    });
+    el.addEventListener('blur',save);
+  });
+  window.addEventListener('pagehide',save);
+  document.addEventListener('visibilitychange',function(){ if(document.visibilityState==='hidden') save(); });
+
+  function build(){
+    var out=['BRAND PARTNERSHIP INTAKE - FAIZA (thefaizaglam)','Completed: '+new Date().toDateString(),''];
+    var cur='';
+    fields.forEach(function(el){
+      var sec=el.closest('section');
+      var sn=sec?sec.querySelector('.snum'):null;
+      var nm=sn?sn.textContent.trim():'';
+      if(nm&&nm!==cur){ cur=nm; out.push('','== '+nm.toUpperCase()+' =='); }
+      if(el.value.trim()){ out.push('',label(el),el.value.trim()); }
+    });
+    return out.join('\n');
+  }
+  document.getElementById('copy').addEventListener('click',function(){
+    var txt=build(), b=this;
+    function ok(){ b.textContent='Copied'; setTimeout(function(){b.textContent='Copy my answers'},2200); }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(ok,function(){fallback(txt)});
+    } else fallback(txt);
+    function fallback(t){
+      var d=document.getElementById('dump'); d.value=t; d.classList.add('on');
+      d.focus(); d.setSelectionRange(0,t.length);
+      b.textContent='Select and copy above';
+    }
+  });
+  document.getElementById('show').addEventListener('click',function(){
+    var d=document.getElementById('dump'); d.value=build(); d.classList.toggle('on');
+    if(d.classList.contains('on')) d.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+})();
+</script>
 </body>
 </html>
