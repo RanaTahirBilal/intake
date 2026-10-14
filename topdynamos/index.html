@@ -111,6 +111,7 @@ footer .mark{font-size:.95rem}
   <span class="pill">Website intake</span>
   <h1>Before we build anything, we need to hear it from you.</h1>
   <p>This takes about fifteen minutes. Nothing goes on your website that you have not written here or confirmed, so the more you give us, the less we have to guess. Skip anything you would rather not answer.</p>
+  <p style="color:var(--gold);font-size:.98rem">If you are short of time, the two sections worth your effort are <b style="color:var(--cream);font-weight:600">What you do</b> and <b style="color:var(--cream);font-weight:600">What you actually think</b>. Those are what make a page sound like you.</p>
 </div></div>
 
 <div class="bar"><div class="in">
@@ -132,13 +133,15 @@ footer .mark{font-size:.95rem}
     <p class="sec-note">Just the details we need to reach you and to label things correctly.</p>
     <div class="q"><label for="q_name">Your full name, as it should appear on the site <span class="req">required</span></label><input type="text" id="q_name" name="Full name" required autocomplete="name"></div>
     <div class="q"><label for="q_called">What do people actually call you?</label><span class="hint">If you go by something other than your full name.</span><input type="text" id="q_called" name="Goes by"></div>
+    <div class="q"><label for="q_address">How should we address you in writing?</label><span class="hint">For example Mr. Clapp, Dr. Fennoy, Colonel Garner, or just your first name. We would rather ask than guess wrongly.</span><input type="text" id="q_address" name="How to address you"></div>
     <div class="q"><label for="q_title">Current title</label><input type="text" id="q_title" name="Title"></div>
     <div class="q"><label for="q_org">Organization</label><input type="text" id="q_org" name="Organization"></div>
     <div class="q"><label for="q_city">City and state</label><input type="text" id="q_city" name="City and state"></div>
     <div class="q"><label for="q_years">Years in this field</label><input type="text" id="q_years" name="Years in field"></div>
     <div class="q"><label for="q_email">Contact email for the site <span class="req">required</span></label><span class="hint">This is where enquiries from the website will go. It can be different from your personal address.</span><input type="email" id="q_email" name="Contact email" required autocomplete="email"></div>
     <div class="q"><label for="q_phone">Contact phone</label><span class="hint">Leave blank if you would rather it was not published.</span><input type="tel" id="q_phone" name="Contact phone" autocomplete="tel"></div>
-    <div class="q"><label for="q_links">Any existing links</label><span class="hint">Current website, LinkedIn, a company page, anything already online about you. One per line.</span><textarea id="q_links" name="Existing links"></textarea></div>
+    <div class="q"><label for="q_links">Any existing links</label><span class="hint">Current website, LinkedIn, a company page, anything already online about you. One per line. Put a star next to any you want shown ON the site, as opposed to just given to us for research.</span><textarea id="q_links" name="Existing links"></textarea></div>
+    <div class="q"><label for="q_reach">Best times to reach you, and your time zone</label><span class="hint">So we are not trading messages trying to find an hour.</span><input type="text" id="q_reach" name="Best times to reach you"></div>
   </fieldset>
 
   <fieldset data-step="1" data-name="What you do" hidden>
@@ -156,7 +159,7 @@ footer .mark{font-size:.95rem}
     <legend>How you got here</legend>
     <p class="sec-note">The career, in order. Dates help, approximate is fine.</p>
     <div class="q"><label for="q_first">Your first job, and what it taught you.</label><textarea id="q_first" name="First job"></textarea></div>
-    <div class="q"><label for="q_roles">Every role since, in order.</label><span class="hint">Employer, title and years. One per line.</span><textarea id="q_roles" name="Roles since"></textarea></div>
+    <div class="q"><label for="q_roles">Every role since, in order.</label><span class="hint">Employer, title and years. One per line. If you are not sure of a year, write about. We would far rather print "about 2015" than the wrong date.</span><textarea id="q_roles" name="Roles since"></textarea></div>
     <div class="q"><label for="q_turn">Was there a turning point?</label><textarea id="q_turn" name="Turning point"></textarea></div>
   </fieldset>
 
@@ -208,12 +211,22 @@ footer .mark{font-size:.95rem}
         <label><input type="radio" name="Permission to create pictures" value="No, photographs only"> No, photographs only</label>
         <label><input type="radio" name="Permission to create pictures" value="Ask me first"> Ask me first</label>
       </div></div>
+    <div class="q"><label for="q_brand">Do you have a logo or brand colours we should keep?</label><span class="hint">If you run a company with existing branding, tell us here and send the logo with your photographs. If you have none, say so and we will choose.</span><textarea id="q_brand" name="Logo and brand colours"></textarea></div>
   </fieldset>
 
   <fieldset data-step="7" data-name="Practical" hidden>
     <legend>Boundaries and practical</legend>
     <p class="sec-note">Last one. Tell us where the edges are.</p>
     <div class="q"><label for="q_nope">What do you not want on this site?</label><span class="hint">Anything off limits: a former employer, an address, a photograph, a subject.</span><textarea id="q_nope" name="What not to include"></textarea></div>
+    <div class="q"><label for="q_wrong">Is anything currently online about you wrong or out of date?</label><span class="hint">An old title, a former company, a wrong qualification, a profile you no longer control, someone else with your name. Tell us and we will make sure the new site says the right thing.</span><textarea id="q_wrong" name="Wrong or outdated online"></textarea></div>
+    <div class="q"><label>How should people contact you from the site?</label>
+      <span class="hint">A contact form needs a working email address. If you would rather not publish one, we can send people to LinkedIn or a phone number instead.</span>
+      <div class="radios">
+        <label><input type="radio" name="Contact method on site" value="A contact form"> A contact form</label>
+        <label><input type="radio" name="Contact method on site" value="Show my email address"> Show my email</label>
+        <label><input type="radio" name="Contact method on site" value="Phone only"> Phone only</label>
+        <label><input type="radio" name="Contact method on site" value="Send people to LinkedIn"> Send them to LinkedIn</label>
+      </div></div>
     <div class="q"><label for="q_approve">Does anyone need to approve this before it goes live?</label><input type="text" id="q_approve" name="Approval needed from"></div>
     <div class="q"><label for="q_when">When do you need it?</label><input type="text" id="q_when" name="Deadline"></div>
     <div class="q"><label for="q_domain">Do you own a domain?</label><span class="hint">If yes, write it exactly. If not, say no and we will advise.</span><input type="text" id="q_domain" name="Domain"></div>
